@@ -1,0 +1,34 @@
+public ListaDeEnterosEnlazada combinarOrdenadoBien (ListaDeEnterosEnlazada listaParam) {
+		
+		ListaDeEnterosEnlazada listaResult = new ListaDeEnterosEnlazada();
+		
+		this.comenzar();
+		listaParam.comenzar();
+		listaResult.comenzar();
+		
+		int a = listaParam.proximo();
+		int b = this.proximo();
+		
+		while (!this.fin() && !listaParam.fin()) {
+			if (a < b) {
+				listaResult.agregarFinal(a);
+				a = this.proximo();
+			} else {
+				listaResult.agregarFinal(b);
+				b = listaParam.proximo();
+			}
+		}
+		
+		while (!this.fin()) {
+			a = this.proximo();
+			listaResult.agregarFinal(a);
+		}
+		
+		while (!listaParam.fin()) {
+			b = listaParam.proximo();
+			listaResult.agregarFinal(b);
+		}
+		
+		return listaResult;
+		
+	}
