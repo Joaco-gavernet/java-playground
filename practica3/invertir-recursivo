@@ -1,0 +1,44 @@
+public ListaGenericaEnlazada<T> invertir() {
+		ListaGenericaEnlazada<T> result = new ListaGenericaEnlazada<T>();
+		
+		for (int i = 0; i < this.tamanio(); i++) {
+			result.agregarFinal(this.elemento(i));
+		}
+		
+		result = recursiveInversion(result);
+		
+		return result;
+	}
+	
+	private ListaGenericaEnlazada<T> recursiveInversion(ListaGenericaEnlazada<T> l) {
+				
+		if (l.tamanio() > 1) {
+			ListaGenericaEnlazada<T> second = new ListaGenericaEnlazada<T>();			
+			int limit = (l.tamanio() / 2) + (l.tamanio() % 2);
+
+			for (int i = limit; i < l.tamanio(); i++) { // create second list
+				second.agregarFinal(l.elemento(i));
+			}
+			for (int i = limit; i <= l.tamanio(); i++) { // clean result list
+				l.eliminarEn(limit);
+			}
+			
+			l = this.recursiveInversion(l);
+			second = this.recursiveInversion(second);
+			
+			return l.concatenarInicio(second);
+		}
+		
+		return l;
+	}
+	
+	private ListaGenericaEnlazada<T> concatenarInicio(ListaGenericaEnlazada<T> l) {
+		int i = l.tamanio() - 1;
+		
+		while (i >= 0) {
+			this.agregarInicio(l.elemento(i));
+			i--;
+		}
+		
+		return this;
+	}
