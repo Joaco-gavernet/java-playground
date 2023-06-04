@@ -17,6 +17,9 @@ public class ProcesadorDeArbol {
 		
 		if (a.esHoja()) return ((k == 0) ? 1 : 0);
 		else {
+			
+			if (!(a.tieneHijoIzquierdo() && a.tieneHijoDerecho())) k--;
+			
 			if (a.tieneHijoIzquierdo()) {
 				ProcesadorDeArbol i = new ProcesadorDeArbol();
 				i.setA(a.getHijoIzquierdo());
