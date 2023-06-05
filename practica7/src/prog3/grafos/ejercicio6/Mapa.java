@@ -265,23 +265,18 @@ public class Mapa {
 
 			while (!listaDeAdyacentes.fin() && !caminoActual.elemento(caminoActual.tamanio() - 1).equals(ciudadDestino)) {
 				Arista<String> arista = listaDeAdyacentes.proximo();
-				if (combustible - arista.peso() >= 0) {
-					Vertice<String> vSiguiente = arista.verticeDestino();
-					if (!visitados[vSiguiente.posicion()]) {
-						dfsCaminoConMenorCargaDeCombustible(vSiguiente, visitados, grafo, ciudadDestino,
-								kilometrosRecorridos + arista.peso(),
-								caminoActual, combustible - arista.peso(), recargas, resultado);
-					}
-				} else {
-					Vertice<String> vSiguiente = arista.verticeDestino();
-					if (!visitados[vSiguiente.posicion()]) {
-						combustible += kilometrosRecorridos; // reseteo el combustible inicial
-						kilometrosRecorridos = 0; // reseteo kilometros recorridos desde la ultima parada
-						// cuento recarga con racargas + 1
-						dfsCaminoConMenorCargaDeCombustible(vSiguiente, visitados, grafo, ciudadDestino,
-								kilometrosRecorridos + arista.peso(),
-								caminoActual, combustible - arista.peso(), recargas + 1, resultado);
-					}
+
+				int increment = 0;
+				if (combustible - arista.peso() < 0) {
+					combustible += kilometrosRecorridos; // reseteo el combustible inicial
+					kilometrosRecorridos = 0; // reseteo kilometros recorridos desde la ultima parada
+					increment = 1; // cuento recarga con racargas + increment
+				}
+				Vertice<String> vSiguiente = arista.verticeDestino();
+				if (!visitados[vSiguiente.posicion()]) {
+					dfsCaminoConMenorCargaDeCombustible(vSiguiente, visitados, grafo, ciudadDestino,
+							kilometrosRecorridos + arista.peso(),
+							caminoActual, combustible - arista.peso(), recargas + increment, resultado);
 				}
 			}
 		} else if (resultado.getRecargas() > recargas) {
