@@ -1,4 +1,4 @@
-package prog3.grafos.ejercicio6;
+package prog3.grafos.utiles.ejercicio6;
 
 import prog3.grafos.Grafo;
 import prog3.grafos.GrafoImplListAdy;

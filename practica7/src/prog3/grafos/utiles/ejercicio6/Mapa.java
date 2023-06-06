@@ -1,12 +1,12 @@
-package prog3.grafos.ejercicio6;
+package prog3.grafos.utiles.ejercicio6;
 
 import prog3.grafos.Arista;
 import prog3.grafos.Grafo;
 import prog3.grafos.GrafoImplListAdy;
 import prog3.grafos.Vertice;
+import prog3.grafos.utiles.ejercicio6.Resultado;
 import prog3.listagenerica.ListaGenerica;
 import prog3.listagenerica.ListaGenericaEnlazada;
-import prog3.grafos.ejercicio6.Resultado;
 
 public class Mapa {
 	private static Grafo<String> grafo;

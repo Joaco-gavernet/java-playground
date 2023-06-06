@@ -1,4 +1,4 @@
-package prog3.grafos.ejercicio6;
+package prog3.grafos.utiles.ejercicio6;
 
 import prog3.listagenerica.ListaGenerica;
 import prog3.listagenerica.ListaGenericaEnlazada;
