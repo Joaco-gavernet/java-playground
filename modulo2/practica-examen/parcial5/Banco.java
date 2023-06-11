@@ -34,7 +34,7 @@ public class Banco {
     cola.encolar(null);
     visitados[v.posicion()] = true;
 
-    while (!cola.esVacia() && l.tamanio() <= 40 && grado >= 0) {
+    while (!cola.esVacia() && l.tamanio() <= 40 && grado > 0) {
       Vertice<Persona> act = cola.desencolar();
       if (act == null) {
         if (!cola.esVacia())

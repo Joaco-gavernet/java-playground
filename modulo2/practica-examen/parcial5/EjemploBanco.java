@@ -13,6 +13,7 @@ public class EjemploBanco {
     Vertice<Persona> raul = new VerticeImplListAdy<Persona>(new Persona(true, "Raul"));
     Vertice<Persona> amalia = new VerticeImplListAdy<Persona>(new Persona(true, "Amalia"));
     Vertice<Persona> marta = new VerticeImplListAdy<Persona>(new Persona(true, "Marta"));
+    Vertice<Persona> cristina = new VerticeImplListAdy<Persona>(new Persona(true, "Cristina"));
 
     // agregar vertices al grafo ///////////////////////////
     g.agregarVertice(marcos);
@@ -20,12 +21,14 @@ public class EjemploBanco {
     g.agregarVertice(raul);
     g.agregarVertice(amalia);
     g.agregarVertice(marta);
+    g.agregarVertice(cristina);
 
     // conectar vertices en el grafo //////////////////////////
     g.conectar(marcos, juan);
     g.conectar(marcos, raul);
     g.conectar(raul, amalia);
-    g.conectar(raul, marta);
+    g.conectar(amalia, marta);
+    g.conectar(marta, cristina);
 
     // implementacion de Banco.resolver() //////////////////////////
     Banco b = new Banco();
