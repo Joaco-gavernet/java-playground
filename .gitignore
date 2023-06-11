@@ -1,6 +1,3 @@
-# Ignore everything
-*
-
-# Un-ignore the specified directories
-!/modulo1/
-!/modulo2/
+# Ignore
+.gitignore
+/playground
