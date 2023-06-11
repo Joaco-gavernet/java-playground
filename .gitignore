@@ -1,9 +1,6 @@
 # Ignore everything
 *
 
-# But not these files...
-!.gitignore
-
-# if the files to be tracked are in subdirectories
-!*/modulo1
-!*/modulo2
+# Un-ignore the specified directories
+!/modulo1/
+!/modulo2/
