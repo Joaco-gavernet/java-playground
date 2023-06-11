@@ -13,7 +13,7 @@ public class EjemploParcial {
   public static void main(String args[]) {
     Grafo<C> grafo = new GrafoImplListAdy<C>();
 
-    // create vertices
+    // create vertices /////////////////////////////////
     Vertice<C> suipacha = new VerticeImplListAdy<C>(new C("Suipacha", 5));
     Vertice<C> carlosKeen = new VerticeImplListAdy<C>(new C("Carlos Keen", 3));
     Vertice<C> moreno = new VerticeImplListAdy<C>(new C("Moreno", 2));
@@ -26,7 +26,7 @@ public class EjemploParcial {
     Vertice<C> lobos = new VerticeImplListAdy<C>(new C("Lobos", 3));
     Vertice<C> saladillo = new VerticeImplListAdy<C>(new C("Saladillo", 4));
 
-    // add vertices to graph
+    // add vertices to graph /////////////////////////////////
     grafo.agregarVertice(suipacha);
     grafo.agregarVertice(carlosKeen);
     grafo.agregarVertice(moreno);
@@ -39,7 +39,7 @@ public class EjemploParcial {
     grafo.agregarVertice(lobos);
     grafo.agregarVertice(saladillo);
 
-    // add connections to graph
+    // add connections to graph /////////////////////////////////
     grafo.conectar(suipacha, carlosKeen);
     grafo.conectar(suipacha, navarro);
     grafo.conectar(carlosKeen, moreno);
@@ -53,7 +53,7 @@ public class EjemploParcial {
     grafo.conectar(navarro, saladillo);
     grafo.conectar(canuelas, abasto);
 
-    // make it a digraph
+    // make it a digraph /////////////////////////////////
     grafo.conectar(carlosKeen, suipacha);
     grafo.conectar(navarro, suipacha);
     grafo.conectar(moreno, carlosKeen);
@@ -67,6 +67,7 @@ public class EjemploParcial {
     grafo.conectar(saladillo, navarro);
     grafo.conectar(abasto, canuelas);
 
+    // Imprimir grafo /////////////////////////////////
     // for (int i = 0; i < grafo.listaDeVertices().tamanio(); i++) {
     // Vertice<C> v = grafo.listaDeVertices().elemento(i);
     // System.out.print(v.dato().getCity() + " (" + v.dato().getFase() + ") -> ");
@@ -82,7 +83,7 @@ public class EjemploParcial {
     // System.out.println();
     // }
 
-    // implementacion de Parcial.resolver()
+    // implementacion de Parcial.resolver() /////////////////////////////////
     System.out.println("Resultado: ");
     Parcial p = new Parcial();
     ListaGenerica<String> lista = p.resolver(grafo, "La Plata", "Carlos Keen");
