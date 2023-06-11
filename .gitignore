@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+
+# if the files to be tracked are in subdirectories
+!modulo1/*
+!modulo2/*
