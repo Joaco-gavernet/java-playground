@@ -1,3 +1,5 @@
+package prog3.grafos.util.parcial4;
+
 public class Resultado {
   private int dias;
 

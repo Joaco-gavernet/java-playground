@@ -1,3 +1,5 @@
+package prog3.grafos.util.parcial4;
+
 public class C {
   private String c;
   private int d;
