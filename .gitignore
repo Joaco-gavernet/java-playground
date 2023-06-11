@@ -5,5 +5,5 @@
 !.gitignore
 
 # if the files to be tracked are in subdirectories
-!modulo1/*
-!modulo2/*
+!*/modulo1
+!*/modulo2
