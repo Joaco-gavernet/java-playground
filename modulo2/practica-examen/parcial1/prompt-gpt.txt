@@ -1,0 +1,14 @@
+
+i need to build a undirected graph in the class modulo2/practica-examen/parcial4/EjemploParcial.java following the mask: C.nombreDeCiudad(C.dias) -> [verticeDestino.nombreDeCiudad(C.dias); next connection...] 
+
+Please, check modulo2/practica-examen/parcial4/EjemploParcial.java and follow its patron of initialization, use Vertice, Grafo, GrafoImplListAdy, VerticeImplListAdy, grafo.agregarVertice(), grafo.conectar(), and the class C.java in the same directory:
+
+list:
+- Suipacha(5) -> [Carlos Keen(3); Navarro(4)] 
+- Carlos Keen(3) -> [Moreno(1)] 
+- Moreno(1) -> [Quilmes(1); Abasto(3)] 
+- Quilmes(1) -> [La Plata(2)] 
+- Abasto(2) -> [La Plata(2)] 
+- La Plata(2) -> [Pinamar(3)] 
+- Navarro(4) -> [Canuelas(3); Lobos(3); Saladillo(4)] 
+- Canuelas(3) -> [Abasto(2)] 
